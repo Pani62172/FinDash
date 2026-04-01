@@ -1,0 +1,120 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-xl);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  height: var(--header-height);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: rgba(var(--bg-secondary), 0.85);
+}
+
+[data-theme='light'] .header {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .header {
+  background: rgba(21, 25, 41, 0.85);
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header__menu-btn {
+  display: none;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.header__menu-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.header__title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.header__subtitle {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.header__role-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: var(--primary-bg);
+  color: var(--primary);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.header__theme-btn {
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.header__theme-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.header__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: var(--font-xs);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--space-md);
+  }
+
+  .header__menu-btn {
+    display: flex;
+  }
+
+  .header__title {
+    font-size: var(--font-lg);
+  }
+
+  .header__role-badge {
+    display: none;
+  }
+}

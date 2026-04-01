@@ -1,0 +1,76 @@
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-type-toggle {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-primary);
+  padding: 3px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.form-type-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.form-type-btn:hover {
+  color: var(--text-primary);
+}
+
+.form-type-btn--expense {
+  background: var(--expense);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-type-btn--expense:hover {
+  color: white;
+}
+
+.form-type-btn--income {
+  background: var(--income);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-type-btn--income:hover {
+  color: white;
+}
+
+.input--error {
+  border-color: var(--expense);
+}
+
+.form-error {
+  font-size: var(--font-xs);
+  color: var(--expense);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
