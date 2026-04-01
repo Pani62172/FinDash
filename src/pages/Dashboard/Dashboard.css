@@ -4,14 +4,12 @@
   gap: var(--space-xl);
 }
 
-/* Summary Cards Grid */
 .dashboard__cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
 }
 
-/* Charts Grid */
 .dashboard__charts {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -22,7 +20,7 @@
   padding: var(--space-lg);
 }
 
-.dashboard__chart-subtitle {
+.dashboard__chart-sub {
   font-size: var(--font-xs);
   color: var(--text-tertiary);
   margin-top: -12px;
@@ -40,12 +38,13 @@
   border-radius: var(--radius-md);
   padding: var(--space-sm) var(--space-md);
   box-shadow: var(--shadow-lg);
+  animation: fadeInScale 0.15s ease;
 }
 
 .chart-tooltip__label {
   font-size: var(--font-xs);
   color: var(--text-tertiary);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .chart-tooltip__value {
@@ -69,11 +68,13 @@
   font-size: var(--font-sm);
   color: var(--primary);
   font-weight: 500;
-  transition: color var(--transition-fast);
+  transition: all var(--transition-slow);
+  letter-spacing: -0.01em;
 }
 
 .dashboard__view-all:hover {
   color: var(--primary-dark);
+  letter-spacing: 0.02em;
 }
 
 .dashboard__recent-list {
@@ -87,22 +88,23 @@
   gap: var(--space-md);
   padding: var(--space-md) 0;
   border-bottom: 1px solid var(--border-light);
-  transition: background var(--transition-fast);
+  transition: all var(--transition-slow);
 }
 
 .dashboard__recent-item:last-child {
   border-bottom: none;
 }
 
-.dashboard__recent-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
+.dashboard__recent-item:hover {
+  padding-left: 8px;
+}
+
+.dashboard__recent-cat {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  min-width: 80px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .dashboard__recent-info {
@@ -127,6 +129,7 @@
 }
 
 .dashboard__recent-amount {
+  font-family: var(--font-heading);
   font-size: var(--font-base);
   font-weight: 600;
   white-space: nowrap;

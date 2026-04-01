@@ -3,59 +3,37 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: var(--space-lg);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-base);
   opacity: 0;
   position: relative;
   overflow: hidden;
-}
-
-.summary-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
-  opacity: 0;
-  transition: opacity var(--transition-base);
+  transition: all var(--transition-slow);
 }
 
 .summary-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  border-color: var(--text-tertiary);
 }
 
-.summary-card:hover::before {
-  opacity: 1;
-}
-
-.summary-card__header {
+.summary-card__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
-.summary-card__icon {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-xl);
+.summary-card__label {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .summary-card__trend {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  padding: 4px 8px;
-  border-radius: var(--radius-full);
   font-size: var(--font-xs);
   font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
 }
 
 .summary-card__trend--up {
@@ -69,24 +47,32 @@
 }
 
 .summary-card__value {
+  font-family: var(--font-heading);
   font-size: var(--font-3xl);
   font-weight: 800;
-  color: var(--text-primary);
   line-height: 1.1;
-  margin-bottom: 4px;
-  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+  letter-spacing: -0.03em;
+  animation: countUp 0.6s ease forwards;
 }
 
-.summary-card__label {
-  font-size: var(--font-sm);
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-.summary-card__trend-label {
+.summary-card__sub {
   font-size: var(--font-xs);
   color: var(--text-tertiary);
-  margin-top: var(--space-xs);
+}
+
+.summary-card__accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.summary-card:hover .summary-card__accent {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {

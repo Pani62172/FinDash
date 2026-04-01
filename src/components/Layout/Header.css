@@ -9,16 +9,6 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(12px);
-  background: rgba(var(--bg-secondary), 0.85);
-}
-
-[data-theme='light'] .header {
-  background: rgba(255, 255, 255, 0.85);
-}
-
-[data-theme='dark'] .header {
-  background: rgba(21, 25, 41, 0.85);
 }
 
 .header__left {
@@ -30,13 +20,12 @@
 .header__menu-btn {
   display: none;
   padding: var(--space-sm);
-  border-radius: var(--radius-md);
+  font-size: var(--font-xl);
   color: var(--text-secondary);
   transition: all var(--transition-fast);
 }
 
 .header__menu-btn:hover {
-  background: var(--bg-hover);
   color: var(--text-primary);
 }
 
@@ -50,55 +39,68 @@
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .header__subtitle {
   font-size: var(--font-xs);
   color: var(--text-tertiary);
+  font-family: var(--font-body);
 }
 
 .header__right {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-md);
 }
 
 .header__role-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  padding: 5px 12px;
   border-radius: var(--radius-full);
-  background: var(--primary-bg);
-  color: var(--primary);
   font-size: var(--font-xs);
   font-weight: 600;
   text-transform: capitalize;
+  color: var(--primary);
+  border: 1px solid var(--primary-bg);
+  background: var(--primary-bg);
+  letter-spacing: 0.02em;
 }
 
 .header__theme-btn {
   padding: var(--space-sm);
-  border-radius: var(--radius-md);
-  color: var(--text-secondary);
-  transition: all var(--transition-fast);
-}
-
-.header__theme-btn:hover {
-  background: var(--bg-hover);
-  color: var(--text-primary);
-}
-
-.header__avatar {
-  width: 34px;
-  height: 34px;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--text-secondary);
+  font-size: var(--font-md);
+  transition: all var(--transition-slow);
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: var(--font-xs);
+}
+
+.header__theme-btn:hover {
+  color: var(--text-primary);
+  transform: rotate(180deg);
+}
+
+.header__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
   font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform var(--transition-slow);
+}
+
+.header__avatar:hover {
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {

@@ -15,28 +15,19 @@
 .transactions__search-wrapper {
   position: relative;
   flex: 1;
-  min-width: 220px;
-}
-
-.transactions__search-icon {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-tertiary);
-  pointer-events: none;
+  min-width: 200px;
 }
 
 .transactions__search {
   width: 100%;
-  padding: 10px 36px 10px 42px;
+  padding: 10px 36px 10px 16px;
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   color: var(--text-primary);
   font-size: var(--font-base);
   outline: none;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-slow);
 }
 
 .transactions__search:focus {
@@ -54,13 +45,12 @@
   top: 50%;
   transform: translateY(-50%);
   padding: 4px;
-  border-radius: var(--radius-sm);
   color: var(--text-tertiary);
-  transition: all var(--transition-fast);
+  font-size: var(--font-sm);
+  transition: color var(--transition-fast);
 }
 
 .transactions__search-clear:hover {
-  background: var(--bg-hover);
   color: var(--text-primary);
 }
 
@@ -80,20 +70,7 @@
   color: var(--primary);
 }
 
-.transactions__filter-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  border-radius: var(--radius-full);
-  background: var(--primary);
-  color: white;
-  font-size: 10px;
-  font-weight: 700;
-}
-
-/* Filters Panel */
+/* Filters */
 .transactions__filters {
   display: flex;
   align-items: flex-end;
@@ -109,27 +86,21 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  min-width: 180px;
+  min-width: 160px;
 }
 
 .transactions__filter-label {
-  font-size: var(--font-xs);
+  font-size: 10px;
   font-weight: 600;
   color: var(--text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.transactions__clear-filters {
-  margin-left: auto;
-  white-space: nowrap;
+  letter-spacing: 0.08em;
 }
 
 /* Meta */
 .transactions__meta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .transactions__count {
@@ -152,26 +123,26 @@
 .transactions__table thead th {
   padding: var(--space-md) var(--space-lg);
   text-align: left;
-  font-size: var(--font-xs);
+  font-size: 10px;
   font-weight: 600;
   color: var(--text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   border-bottom: 1px solid var(--border);
   background: var(--bg-tertiary);
   white-space: nowrap;
 }
 
 .transactions__table thead th:first-child {
-  border-radius: var(--radius-lg) 0 0 0;
+  border-radius: var(--radius-xl) 0 0 0;
 }
 
 .transactions__table thead th:last-child {
-  border-radius: 0 var(--radius-lg) 0 0;
+  border-radius: 0 var(--radius-xl) 0 0;
 }
 
 .transactions__table tbody tr {
-  transition: background var(--transition-fast);
+  transition: all var(--transition-slow);
 }
 
 .transactions__table tbody tr:hover {
@@ -188,16 +159,26 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: var(--font-xs);
+  font-size: 10px;
   font-weight: 600;
   color: var(--text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   transition: color var(--transition-fast);
 }
 
 .transactions__sort-btn:hover {
   color: var(--text-primary);
+}
+
+.sort-icon {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.sort-icon--active {
+  color: var(--primary);
 }
 
 .transactions__date {
@@ -206,32 +187,18 @@
 }
 
 .transactions__desc {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
   font-weight: 500;
-}
-
-.transactions__desc-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  flex-shrink: 0;
 }
 
 .transactions__category-badge {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
   font-size: var(--font-xs);
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .transactions__amount {
+  font-family: var(--font-heading);
   font-weight: 600;
   white-space: nowrap;
 }
@@ -247,6 +214,10 @@
 .transactions__actions {
   display: flex;
   gap: 4px;
+}
+
+.transactions__delete-btn:hover {
+  color: var(--expense) !important;
 }
 
 /* Responsive */

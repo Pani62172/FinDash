@@ -4,7 +4,7 @@
   gap: var(--space-xl);
 }
 
-/* Metrics Grid */
+/* Metrics */
 .insights__metrics {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -12,44 +12,26 @@
 }
 
 .insights__metric {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
   padding: var(--space-lg);
-}
-
-.insights__metric-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.insights__metric-content {
   display: flex;
   flex-direction: column;
-  min-width: 0;
+  gap: 2px;
 }
 
 .insights__metric-label {
-  font-size: var(--font-xs);
+  font-size: 10px;
   font-weight: 600;
   color: var(--text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .insights__metric-value {
-  font-size: var(--font-xl);
+  font-family: var(--font-heading);
+  font-size: var(--font-2xl);
   font-weight: 700;
   color: var(--text-primary);
-  margin: 2px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  letter-spacing: -0.02em;
 }
 
 .insights__metric-sub {
@@ -75,14 +57,14 @@
   margin-bottom: var(--space-md);
 }
 
-/* Bottom Row */
+/* Bottom */
 .insights__bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
 }
 
-/* Category Breakdown */
+/* Categories */
 .insights__categories {
   padding: var(--space-lg);
 }
@@ -97,6 +79,11 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  transition: all var(--transition-slow);
+}
+
+.insights__category-item:hover {
+  padding-left: 4px;
 }
 
 .insights__category-header {
@@ -105,26 +92,11 @@
   justify-content: space-between;
 }
 
-.insights__category-left {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-.insights__category-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-}
-
 .insights__category-name {
   font-size: var(--font-sm);
-  font-weight: 500;
-  color: var(--text-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .insights__category-right {
@@ -137,6 +109,7 @@
   font-size: var(--font-sm);
   font-weight: 600;
   color: var(--text-primary);
+  font-family: var(--font-heading);
 }
 
 .insights__category-pct {
@@ -147,16 +120,16 @@
 }
 
 .insights__category-bar {
-  height: 6px;
+  height: 4px;
   background: var(--bg-tertiary);
-  border-radius: 3px;
+  border-radius: 2px;
   overflow: hidden;
 }
 
 .insights__category-fill {
   height: 100%;
-  border-radius: 3px;
-  transition: width 0.8s ease;
+  border-radius: 2px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Top Expenses */
@@ -172,31 +145,26 @@
 .insights__top-item {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-md);
   padding: var(--space-sm) 0;
   border-bottom: 1px solid var(--border-light);
+  transition: all var(--transition-slow);
 }
 
 .insights__top-item:last-child {
   border-bottom: none;
 }
 
+.insights__top-item:hover {
+  padding-left: 4px;
+}
+
 .insights__top-rank {
-  width: 24px;
+  width: 20px;
+  font-family: var(--font-heading);
   font-size: var(--font-sm);
   font-weight: 700;
   color: var(--text-tertiary);
-}
-
-.insights__top-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  flex-shrink: 0;
 }
 
 .insights__top-info {
@@ -221,6 +189,7 @@
 }
 
 .insights__top-amount {
+  font-family: var(--font-heading);
   font-size: var(--font-sm);
   font-weight: 600;
   color: var(--expense);
@@ -229,19 +198,16 @@
 
 /* Observation */
 .insights__observation {
-  margin-top: var(--space-md);
+  margin-top: var(--space-lg);
   padding: var(--space-md);
+  border-left: 2px solid var(--primary);
   background: var(--primary-bg);
-  border-radius: var(--radius-md);
-  display: flex;
-  gap: var(--space-sm);
-  align-items: flex-start;
-  color: var(--primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
 .insights__observation p {
   font-size: var(--font-sm);
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text-secondary);
 }
 
@@ -267,9 +233,5 @@
 
   .insights__bottom {
     grid-template-columns: 1fr;
-  }
-
-  .insights__metric {
-    padding: var(--space-md);
   }
 }

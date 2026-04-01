@@ -1,5 +1,4 @@
 import { useAppContext } from '../../context/AppContext';
-import { LuMenu, LuSun, LuMoon, LuShield, LuEye } from 'react-icons/lu';
 import './Header.css';
 
 export default function Header({ title, subtitle, onMenuClick }) {
@@ -9,7 +8,7 @@ export default function Header({ title, subtitle, onMenuClick }) {
     <header className="header">
       <div className="header__left">
         <button className="header__menu-btn" onClick={onMenuClick}>
-          <LuMenu size={22} />
+          ☰
         </button>
         <div className="header__title-group">
           <h1 className="header__title">{title}</h1>
@@ -18,20 +17,17 @@ export default function Header({ title, subtitle, onMenuClick }) {
       </div>
 
       <div className="header__right">
-        <div className="header__role-badge">
-          {state.role === 'admin' ? <LuShield size={14} /> : <LuEye size={14} />}
-          <span>{state.role === 'admin' ? 'Admin' : 'Viewer'}</span>
-        </div>
+        <span className="header__role-badge">
+          {state.role}
+        </span>
         <button
           className="header__theme-btn"
           onClick={() => dispatch({ type: 'TOGGLE_THEME' })}
-          title={state.theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+          title={state.theme === 'light' ? 'Dark mode' : 'Light mode'}
         >
-          {state.theme === 'light' ? <LuMoon size={18} /> : <LuSun size={18} />}
+          {state.theme === 'light' ? '●' : '○'}
         </button>
-        <div className="header__avatar">
-          <span>SP</span>
-        </div>
+        <div className="header__avatar">SP</div>
       </div>
     </header>
   );

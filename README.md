@@ -30,9 +30,8 @@ The dev server URL will be printed in the terminal (default: `http://localhost:5
 | Routing | React Router v6 |
 | State | React Context + useReducer |
 | Charts | Recharts |
-| Icons | React Icons (Lucide) |
 | Styling | Vanilla CSS + Custom Properties |
-| Font | Inter (Google Fonts) |
+| Fonts | Poppins (headings) + Inter (body) |
 
 ---
 

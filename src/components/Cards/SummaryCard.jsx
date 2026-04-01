@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import './SummaryCard.css';
 
-export default function SummaryCard({ icon, label, value, prefix = '', suffix = '', trend, trendLabel, color, delay = 0 }) {
+export default function SummaryCard({ label, value, prefix = '', suffix = '', trend, trendLabel, color, delay = 0 }) {
   const [displayValue, setDisplayValue] = useState(0);
   const cardRef = useRef(null);
 
   useEffect(() => {
     const numericValue = typeof value === 'number' ? value : parseFloat(value) || 0;
-    const duration = 1000;
-    const steps = 40;
+    const duration = 1200;
+    const steps = 50;
     const increment = numericValue / steps;
     let current = 0;
     let step = 0;
@@ -41,20 +41,17 @@ export default function SummaryCard({ icon, label, value, prefix = '', suffix = 
       style={{ animationDelay: `${delay}ms` }}
       ref={cardRef}
     >
-      <div className="summary-card__header">
-        <div className="summary-card__icon" style={{ background: `${color}15`, color }}>
-          {icon}
-        </div>
+      <div className="summary-card__top">
+        <span className="summary-card__label">{label}</span>
         {trend !== undefined && (
-          <div className={`summary-card__trend ${trend >= 0 ? 'summary-card__trend--up' : 'summary-card__trend--down'}`}>
-            <span>{trend >= 0 ? '↑' : '↓'}</span>
-            <span>{Math.abs(trend)}%</span>
-          </div>
+          <span className={`summary-card__trend ${trend >= 0 ? 'summary-card__trend--up' : 'summary-card__trend--down'}`}>
+            {trend >= 0 ? '↑' : '↓'} {Math.abs(trend)}%
+          </span>
         )}
       </div>
-      <div className="summary-card__value">{formatValue(displayValue)}</div>
-      <div className="summary-card__label">{label}</div>
-      {trendLabel && <div className="summary-card__trend-label">{trendLabel}</div>}
+      <div className="summary-card__value" style={{ color }}>{formatValue(displayValue)}</div>
+      {trendLabel && <div className="summary-card__sub">{trendLabel}</div>}
+      <div className="summary-card__accent" style={{ background: color }} />
     </div>
   );
 }
