@@ -17,7 +17,7 @@ npm run dev
 npm run build
 ```
 
-Opens at **http://localhost:5173**
+The dev server URL will be printed in the terminal (default: `http://localhost:5173`).
 
 ---
 
